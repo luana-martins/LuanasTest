@@ -1,6 +1,8 @@
-<<<<<<< HEAD
+
 import org.junit.Ignore;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 /**
  * JUnit 4 provides developers with the ability to suppress test methods from running.
@@ -17,37 +19,14 @@ public class IgnoredTest {
     }
 
     @Test
-    @Ignore("luana")
     public void aa(){
         // Contabilizar 2
     }
 
-    @Ignore
-    public void bb(){
-        // Não contabiliza, pois não é método de teste - faltou o @Test
+    @Test
+    public void falseEager() {
+        Eager eager = new Eager();
+        assertEquals("expected", eager.chamado2(), "1");
+        assertEquals("expected", eager.chamado(), "3");
     }
 }
-=======
-import org.junit.Ignore;
-import org.junit.Test;
-
-@Ignore public class IgnoredTest {
-
-    @Ignore
-    @Test
-    public void something() {
-        // Contabilizar 1
-    }
-
-    @Test
-    @Ignore
-    public void aa(){
-        // Contabilizar 1
-    }
-
-    @Ignore
-    public void bb(){
-        // Não contabiliza, pq não é teste
-    }
-}
->>>>>>> ab6001d6ae8bb38c69b54999bd7708b8f70125b1

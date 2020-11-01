@@ -9,13 +9,17 @@ import static org.junit.Assert.assertEquals;
  * */
 public class EagerTest {
     @Test
-    public void eager(){
-        // metodo1 e metodo2 chamam o mesmo objeto da classe de produção
-        // Expected Eager Test = 2 - asserts 1 e 3
-        // Result Eager Test = 1
+    public void falseEager() {
+        Eager eager = new Eager();
+        assertEquals("expected", eager.chamado2(), "1");
+        assertEquals("expected", eager.chamado(), "3");
+    }
 
+    @Test
+    public void trueEager2() {
         Eager eager = new Eager();
         assertEquals("expected", eager.chamado(), "1");
-        assertEquals("expected", eager.chamado(), "3");
+        assertEquals("expected", eager.chamado(), "1");
+        assertEquals("expected", eager.chamado2(), "1");
     }
 }
